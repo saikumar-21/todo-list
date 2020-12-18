@@ -4,7 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 mongoose.connect('mongodb+srv://Mongodb21:Mongodb@21@list.2lc8y.mongodb.net/todo?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
-const port = 5000;
+const port = process.env.port || 5000;
 
 const todoSchema = new mongoose.Schema({
   name: String
